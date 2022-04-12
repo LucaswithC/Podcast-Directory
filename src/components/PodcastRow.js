@@ -53,7 +53,6 @@ const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, cl
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if (data.status) setPodcasts(data.feeds || data.items || data.episodes);
       });
   }, []);
