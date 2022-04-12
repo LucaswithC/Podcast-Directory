@@ -530,6 +530,10 @@ a.button.sec {
   grid-auto-flow: dense;
 }
 
+.row-outer .search-flex {
+	padding: 0 20px;
+}
+
 .skeleton-card .podcast-img {
 	background: var(--dark-800);
 }
