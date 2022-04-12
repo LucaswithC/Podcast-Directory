@@ -9,8 +9,8 @@ const queryString = require("query-string");
 import PodcastCard from "./PodcastCard";
 
 const Favourites = ({ favourites }) => {
-  const apiKey = process.env.APIKEY;
-  const apiSecret = process.env.APISECRET;
+  const apiKey = process.env.PREACT_APP_API_KEY;
+  const apiSecret = process.env.PREACT_APP_API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
 
   const [podcasts, setPodcasts] = useState([]);
