@@ -19,7 +19,7 @@ const Home = () => {
   
 
   useEffect(() => {
-    let moreOptionsCont = document.querySelector("#more-options")
+    let moreOptionsCont = typeof window !== "undefined" && document.querySelector("#more-options")
     if(moreOptions) {
       moreOptionsCont.style.height = moreOptionsCont.scrollHeight + "px"
     } else {

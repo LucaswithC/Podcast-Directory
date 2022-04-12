@@ -9,8 +9,8 @@ const queryString = require("query-string");
 import PodcastCard from "./PodcastCard";
 
 const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, clean, fulltext }) => {
-  const apiKey = process.env.PREACT_APP_API_KEY;
-  const apiSecret = process.env.PREACT_APP_API_SECRET;
+  const apiKey = process.env.API_KEY;
+  const apiSecret = process.env.API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
 
   console.log(apiKey)
@@ -65,7 +65,7 @@ const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, cl
   }, []);
 
   function scrollLeft() {
-    let scroll = document.querySelector(".podcast-scroll#" + rand);
+    let scroll = typeof window !== "undefined" && document.querySelector(".podcast-scroll#" + rand);
     let width = scroll.children[0].clientWidth;
     scroll.scrollTo({
       left: scroll.scrollLeft - width,
@@ -74,7 +74,7 @@ const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, cl
   }
 
   function scrollRight() {
-    let scroll = document.querySelector(".podcast-scroll#" + rand);
+    let scroll = typeof window !== "undefined" && document.querySelector(".podcast-scroll#" + rand);
     let width = scroll.children[0].clientWidth;
     scroll.scrollTo({
       left: scroll.scrollLeft + width,

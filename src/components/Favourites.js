@@ -9,8 +9,8 @@ const queryString = require("query-string");
 import PodcastCard from "./PodcastCard";
 
 const Favourites = ({ favourites }) => {
-  const apiKey = process.env.PREACT_APP_API_KEY;
-  const apiSecret = process.env.PREACT_APP_API_SECRET;
+  const apiKey = process.env.API_KEY;
+  const apiSecret = process.env.API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
 
   const [podcasts, setPodcasts] = useState([]);
@@ -63,7 +63,7 @@ const Favourites = ({ favourites }) => {
   }, [favourites]);
 
   function scrollLeft() {
-    let scroll = document.querySelector(".podcast-scroll#" + rand);
+    let scroll = typeof window !== "undefined" && document.querySelector(".podcast-scroll#" + rand);
     let width = scroll.children[0].clientWidth;
     scroll.scrollTo({
       left: scroll.scrollLeft - width,
@@ -72,7 +72,7 @@ const Favourites = ({ favourites }) => {
   }
 
   function scrollRight() {
-    let scroll = document.querySelector(".podcast-scroll#" + rand);
+    let scroll = typeof window !== "undefined" && document.querySelector(".podcast-scroll#" + rand);
     let width = scroll.children[0].clientWidth;
     scroll.scrollTo({
       left: scroll.scrollLeft + width,
