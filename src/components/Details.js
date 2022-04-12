@@ -236,7 +236,7 @@ const Details = () => {
       setFavour(false);
     }
     typeof window !== "undefined" && localStorage.setItem("podcastFavourites", JSON.stringify(oldStorage));
-    window.dispatchEvent( new Event('storage') )
+    typeof window !== "undefined" && window.dispatchEvent( new Event('storage') )
   }
 
   return (
