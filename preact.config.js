@@ -15,6 +15,7 @@ const { parsed } = require('dotenv-safe').config();
 
 export default function(config, env, helpers) {
     // dotenv injection
+    if (env.production) {
     const { plugin } = helpers.getPluginsByName(config, 'DefinePlugin')[0];
     Object.assign(
       plugin.definitions,
@@ -25,7 +26,7 @@ export default function(config, env, helpers) {
         }),
         {}
       )
-    );
+    );}
   }
 
 //   export default (config, env, helpers) => {
