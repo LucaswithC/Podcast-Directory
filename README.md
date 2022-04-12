@@ -1,34 +1,17 @@
-# Foobar
+# Podcast Directory
 
-Foobar is a Python library for dealing with word pluralization.
+**Created as an contribution to [DEVJAM](https://www.devjam.org)**
 
-## Installation
+## Table of Contents
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+1. [About the Project](#about)
+2. [Gallery](#gallery)
+3. [Background](#background)
+4. [Contribution](#contribution)
+5. [Licence](#licence)
 
-```bash
-pip install foobar
-```
+## About the Project {#about}
 
-## Usage
+### Idea
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+The Basic Idea 
