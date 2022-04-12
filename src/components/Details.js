@@ -213,7 +213,7 @@ const Details = () => {
   const [isfavour, setFavour] = useState(false);
 
   function isFavour(id) {
-    let oldStorage = JSON.parse(typeof window !== undefined && localStorage.getItem("podcastFavourites")) || [];
+    let oldStorage = JSON.parse(typeof window !== "undefined" && localStorage.getItem("podcastFavourites")) || [];
     setFavour(oldStorage.indexOf(id.toString()) >= 0);
   }
 
@@ -225,7 +225,7 @@ const Details = () => {
 
   function Favourite(e, id) {
     e.stopPropagation();
-    let oldStorage = JSON.parse(typeof window !== undefined && localStorage.getItem("podcastFavourites")) || [];
+    let oldStorage = JSON.parse(typeof window !== "undefined" && localStorage.getItem("podcastFavourites")) || [];
     if (oldStorage.indexOf(id.toString()) < 0) {
       oldStorage.unshift(id.toString());
       setFavour(true);
@@ -235,7 +235,7 @@ const Details = () => {
       oldStorage = [...one, ...two];
       setFavour(false);
     }
-    typeof window !== undefined && localStorage.setItem("podcastFavourites", JSON.stringify(oldStorage));
+    typeof window !== "undefined" && localStorage.setItem("podcastFavourites", JSON.stringify(oldStorage));
     window.dispatchEvent( new Event('storage') )
   }
 
