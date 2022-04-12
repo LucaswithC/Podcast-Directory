@@ -8,7 +8,9 @@ var sha1 = require("sha1");
 import PodcastRow from "./PodcastRow";
 
 const RegularResults = () => {
+  if (typeof localStorage !== "undefined") {
   const [favourites, setFavourites] = useState(JSON.parse(localStorage.getItem("podcastFavourites")) || []);
+  }
   let dummy = new Array(10).fill({
     image:
       "https://images.unsplash.com/photo-1612828898780-c0b0c219e552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",

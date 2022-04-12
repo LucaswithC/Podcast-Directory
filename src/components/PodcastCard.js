@@ -8,10 +8,11 @@ import errorImage from '../assets/images/error-image.jpg'
 const mapToProps = ({ detailsStatus, detailsData }) => ({ detailsStatus, detailsData });
 
 const PodcastCard = ({ data }) => {
+  if (typeof localStorage !== "undefined") {
   const [isfavour, setFavour] = useState(() => {
     let oldStorage = JSON.parse(localStorage.getItem("podcastFavourites")) || [];
     return oldStorage.indexOf(data.id.toString()) >= 0 || false;
-  });
+  });}
 
   function Favourite(e, id) {
     e.stopPropagation();
