@@ -30,11 +30,12 @@ const RegularResults = () => {
   });
   dummy = ""
 
+  if (typeof window !== "undefined") {
   window.onstorage = (event) => {
     let storage = JSON.parse(localStorage.getItem("podcastFavourites")) || [];
     console.log(storage);
     setFavourites(JSON.parse(window.localStorage.getItem("podcastFavourites")) || []);
-  };
+  };}
 
   return (
     <div>
