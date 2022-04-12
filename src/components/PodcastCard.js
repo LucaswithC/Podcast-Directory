@@ -10,13 +10,13 @@ const mapToProps = ({ detailsStatus, detailsData }) => ({ detailsStatus, details
 const PodcastCard = ({ data }) => {
   
   const [isfavour, setFavour] = useState(() => {
-    let oldStorage = JSON.parse(localStorage.getItem("podcastFavourites")) || [];
+    let oldStorage = JSON.parse(typeof window !== undefined && localStorage.getItem("podcastFavourites")) || [];
     return oldStorage.indexOf(data.id.toString()) >= 0 || false;
   });
 
   function Favourite(e, id) {
     e.stopPropagation();
-    let oldStorage = JSON.parse(localStorage.getItem("podcastFavourites")) || [];
+    let oldStorage = JSON.parse(typeof window !== undefined && localStorage.getItem("podcastFavourites")) || [];
     if (oldStorage.indexOf(id.toString()) < 0) {
       oldStorage.unshift(id.toString());
       setFavour(true);
@@ -26,7 +26,7 @@ const PodcastCard = ({ data }) => {
       oldStorage = [...one, ...two];
       setFavour(false);
     }
-    localStorage.setItem("podcastFavourites", JSON.stringify(oldStorage));
+    typeof window !== undefined && localStorage.setItem("podcastFavourites", JSON.stringify(oldStorage));
     window.dispatchEvent( new Event('storage') )
   }
 

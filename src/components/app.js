@@ -14,7 +14,6 @@ import Home from '../routes/home';
 import Details from './Details.js';
 
 const App = () => { return (
-	typeof window !== 'undefined' && 
 	<Provider store={store}>
 	<div id="app" class={hasTouch && "touch-device"}>
 		{/* <Header /> */}
