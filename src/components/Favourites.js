@@ -6,13 +6,9 @@ import { hasTouch } from "detect-touch";
 var sha1 = require("sha1");
 const queryString = require("query-string");
 
-import config from '../../config'
-
 import PodcastCard from "./PodcastCard";
 
 const Favourites = ({ favourites }) => {
-  const apiKey = config.API_KEY;
-  const apiSecret = config.API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
 
   const [podcasts, setPodcasts] = useState([]);
@@ -24,28 +20,26 @@ const Favourites = ({ favourites }) => {
     favourites.forEach((entry) => {
       let url = "https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=" + entry;
       let url2 = "https://api.podcastindex.org/api/1.0/episodes/byid?id=" + entry;
-      let apiHeaderTime = Math.floor(Date.now() / 1000);
-      let authHeader = sha1(apiKey + apiSecret + apiHeaderTime);
-      const promise = fetch(url, {
-        method: "get",
+      const promise = fetch("https://my-api-lucas.herokuapp.com/podcast", {
+        method: "post",
         headers: {
-          "X-Auth-Date": "" + apiHeaderTime,
-          "X-Auth-Key": apiKey,
-          Authorization: authHeader,
-          "User-Agent": "Podcast Directory",
+          'Content-Type': 'application/json'
         },
+        body: JSON.stringify({
+          url: url
+        })
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.description !== "No feeds match this id.") return { res: data, promise: "promise" + entry };
-          return fetch(url2, {
-            method: "get",
+          return fetch("https://my-api-lucas.herokuapp.com/podcast", {
+            method: "post",
             headers: {
-              "X-Auth-Date": "" + apiHeaderTime,
-              "X-Auth-Key": apiKey,
-              Authorization: authHeader,
-              "User-Agent": "Podcast Directory",
+              'Content-Type': 'application/json'
             },
+            body: JSON.stringify({
+              url: url2
+            })
           })
           .then((response) => response.json())
           .then((episodes) => {

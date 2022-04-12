@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production preact build",
+    "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "detect-touch": "^1.1.2",
-    "dotenv-safe": "^8.2.0",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",

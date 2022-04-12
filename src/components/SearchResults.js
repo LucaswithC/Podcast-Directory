@@ -1,16 +1,12 @@
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 
-import config from "../../config";
-
 var sha1 = require("sha1");
 const queryString = require("query-string");
 
 import PodcastCard from "./PodcastCard";
 
 const SearchResults = ({ search, clean }) => {
-  const apiKey = config.API_KEY;
-  const apiSecret = config.API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
 
   const [podcasts, setPodcasts] = useState([]);
@@ -36,17 +32,14 @@ const SearchResults = ({ search, clean }) => {
 
     if (stringified !== "") url += "?" + stringified;
 
-    let apiHeaderTime = Math.floor(Date.now() / 1000);
-    let authHeader = sha1(apiKey + apiSecret + apiHeaderTime);
-
-    fetch(url, {
-      method: "get",
+    fetch("https://my-api-lucas.herokuapp.com/podcast", {
+      method: "post",
       headers: {
-        "X-Auth-Date": "" + apiHeaderTime,
-        "X-Auth-Key": apiKey,
-        Authorization: authHeader,
-        "User-Agent": "Podcast Directory",
+        'Content-Type': 'application/json'
       },
+      body: JSON.stringify({
+        url: url
+      })
     })
       .then((res) => res.json())
       .then((data) => {
