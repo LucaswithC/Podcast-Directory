@@ -16,3 +16,12 @@ export default function(config, env, helpers) {
       )
     );
   }
+
+//   export default (config, env, helpers) => {
+//     config.plugins.push(
+//         new helpers.webpack.DefinePlugin({
+//             'process.env.API_KEY': JSON.stringify('XGJV68AC7WREW5Y5FGXP'),
+//             'process.env.API_SECRET': JSON.stringify('ppxeYFEzZJ#bYR77crWP5wTz#p#kTdB38TfeV9$')
+//         }),
+//     );
+// };
