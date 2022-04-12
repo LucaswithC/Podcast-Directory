@@ -1,14 +1,16 @@
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 
+import config from "../../config";
+
 var sha1 = require("sha1");
 const queryString = require("query-string");
 
 import PodcastCard from "./PodcastCard";
 
 const SearchResults = ({ search, clean }) => {
-  const apiKey = process.env.API_KEY;
-  const apiSecret = process.env.API_SECRET;
+  const apiKey = config.API_KEY;
+  const apiSecret = config.API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
 
   const [podcasts, setPodcasts] = useState([]);

@@ -3,17 +3,17 @@ import { Link } from "preact-router/match";
 import { useEffect, useState } from "preact/hooks";
 import { hasTouch } from "detect-touch";
 
+import config from '../../config'
+
 var sha1 = require("sha1");
 const queryString = require("query-string");
 
 import PodcastCard from "./PodcastCard";
 
 const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, clean, fulltext }) => {
-  const apiKey = process.env.API_KEY;
-  const apiSecret = process.env.API_SECRET;
+  const apiKey = config.API_KEY;
+  const apiSecret = config.API_SECRET;
   const [rand] = useState("id" + Math.floor(Math.random() * 100000 + Date.now()));
-
-  console.log(apiKey)
 
   const [podcasts, setPodcasts] = useState([]);
 
