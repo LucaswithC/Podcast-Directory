@@ -1,6 +1,20 @@
-# Podcast Directory
+<h1 align="center">Podcast Directory</h1>
 
-**Created as a contribution to [DEVJAM](https://www.devjam.org)**
+<div align="center" >
+   <strong>Created as a contribution to <a href="https://www.devjam.org" target="_blank">DEVJAM</a></strong>
+</div>
+
+<div align="center">
+  <h3>
+    <a href="https://podcast-directory-lucas.netlify.app/">
+      Website
+    </a>
+    <span> | </span>
+    <a href="https://www.devjam.org/project/101b88d7-a2cb-486f-b1bb-6493acaca3fa">
+      Competition
+    </a>
+  </h3>
+</div>
 
 ## Table of Contents
 
