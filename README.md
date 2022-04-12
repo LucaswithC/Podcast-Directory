@@ -9,7 +9,7 @@
 3. [Background](#background)
 4. [Technologies](#technologies)
 5. [Contribution](#contribution)
-6. [Licence](#licence)
+6. [License](#license)
 
 ## About the Project
 
@@ -30,9 +30,13 @@ If you have specific Preferences for Podcasts you can Search for any topic in th
 ## Gallery
 
 ![Screenshot 2022-04-12 at 16-23-15 Podcast Directory](https://user-images.githubusercontent.com/82159233/162989127-e96e1be1-cdb2-4dbc-b78f-7c87d0b11475.png)
+1. Overview of the Startpage
+![Screenshot 2022-04-12 at 16-46-08 Podcast Directory](https://user-images.githubusercontent.com/82159233/162994840-6d88c6c6-5069-474d-9de1-435d13b05dd5.png)
+2. This is the Sidebar with the detailed Podcast Information
 ![Screenshot 2022-04-12 at 16-45-21 Podcast Directory](https://user-images.githubusercontent.com/82159233/162989596-6162152a-8cc9-4012-8ec4-a823fa54a3d0.png)
-![Screenshot 2022-04-12 at 16-46-08 Podcast Directory](https://user-images.githubusercontent.com/82159233/162989611-d7de342b-9d48-41d6-8261-8258cabcdb24.png)
+3. The Top-Banner with the Search Input
 ![Screenshot 2022-04-12 at 16-46-30 Podcast Directory](https://user-images.githubusercontent.com/82159233/162989618-1510522b-9368-4340-8add-39f962fde633.png)
+4. After the Search these are the Search Results
 
 ## Background
 
@@ -60,5 +64,6 @@ To contribute please follow these steps:
 4. Push your work back up to your fork
 5. Submit a Pull request so that I can review your changes
 
-## Licence
+## License
 
+[GNU General Public License v2.0](https://github.com/LucaswithC/Podcast-Directory/blob/main/LICENSE)
