@@ -6,11 +6,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://podcast-directory-lucas.netlify.app/">
+    <a href="https://podcast-directory-lucas.netlify.app/" target="_blank">
       Website
     </a>
     <span> | </span>
-    <a href="https://www.devjam.org/project/101b88d7-a2cb-486f-b1bb-6493acaca3fa">
+    <a href="https://www.devjam.org/project/101b88d7-a2cb-486f-b1bb-6493acaca3fa" target="_blank">
       Competition
     </a>
   </h3>
