@@ -34,7 +34,7 @@ const PodcastCard = ({ data }) => {
     <Connect mapToProps={mapToProps} actions={actions}>
       {({ activate }) => (
         <div class="podcast-card" onClick={() => activate(data)}>
-          <img class="podcast-img" src={data.image} onerror={(e) => {e.target.onerror = null; e.target.src = errorImage}} />
+          <img class="podcast-img" src={data.image} onerror={(e) => {e.target.onerror = null; e.target.src = errorImage}} loading="lazy" alt={data.title} />
           <div class="favour" onClick={(e) => Favourite(e, data.id)}>
             <i class={(isfavour ? "fa-solid" : "fa-regular") + " fa-heart"}></i>
           </div>

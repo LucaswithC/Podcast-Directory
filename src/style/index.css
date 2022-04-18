@@ -357,10 +357,12 @@ a.button.sec {
 	width: 100%;
 	aspect-ratio: 1/1;
 	border-radius: 10px;
+	object-fit: cover;
 }
 
 .podcast-card .title {
 	margin: 10px 0 5px;
+	word-wrap: break-word;
 }
 
 .podcast-card .names {

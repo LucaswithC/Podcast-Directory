@@ -45,11 +45,11 @@ const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, cl
     fetch("https://my-api-lucas.herokuapp.com/podcast", {
       method: "post",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        url: url
-      })
+        url: url,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -99,16 +99,20 @@ const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, cl
           )}
         </div>
       ) : (
-        <div class="search-flex">
-          {new Array(4).fill((
-          <div class="podcast-card skeleton-card">
-            <div class="podcast-img" src="" />
-            <div class="title">
-              <div></div>
-            </div>
-            <div class="names dimmed"></div>
-          </div>)).map(card => card)}
-          
+        <div class="podcast-row">
+          <div class="podcast-scroll">
+            {new Array(4)
+              .fill(
+                <div class="podcast-card skeleton-card">
+                  <div class="podcast-img" src="" />
+                  <div class="title">
+                    <div></div>
+                  </div>
+                  <div class="names dimmed"></div>
+                </div>
+              )
+              .map((card) => card)}
+          </div>
         </div>
       )}
     </div>
