@@ -5,7 +5,7 @@
   "display": "standalone",
   "orientation": "landscape",
   "background_color": "#0d0d0d",
-  "theme_color": "#2c7da0",
+  "theme_color": "#0d0d0d",
   "icons": [
     {
       "src": "/assets/icons/android-icon-192x192.png",
