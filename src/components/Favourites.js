@@ -20,7 +20,7 @@ const Favourites = ({ favourites }) => {
     favourites.forEach((entry) => {
       let url = "https://api.podcastindex.org/api/1.0/podcasts/byfeedid?id=" + entry;
       let url2 = "https://api.podcastindex.org/api/1.0/episodes/byid?id=" + entry;
-      const promise = fetch("https://my-api-lucas.herokuapp.com/podcast", {
+      const promise = fetch("https://general-api-ddnv.onrender.com/podcast", {
         method: "post",
         headers: {
           'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ const Favourites = ({ favourites }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.description !== "No feeds match this id.") return { res: data, promise: "promise" + entry };
-          return fetch("https://my-api-lucas.herokuapp.com/podcast", {
+          return fetch("https://general-api-ddnv.onrender.com/podcast", {
             method: "post",
             headers: {
               'Content-Type': 'application/json'

@@ -42,7 +42,7 @@ const RegularResults = ({ dummy, search, cat, notcat, type, max, since, lang, cl
 
     if (stringified !== "") url += "?" + stringified;
 
-    fetch("https://my-api-lucas.herokuapp.com/podcast", {
+    fetch("https://general-api-ddnv.onrender.com/podcast", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
