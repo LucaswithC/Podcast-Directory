@@ -263,7 +263,7 @@ const Details = () => {
             <p>{getDate(detailsData.newestItemPublishTime || detailsData.lastUpdateTime || detailsData.datePublished)}</p>
             <p class="details-point">Language</p>
             <p>{langCodes[(detailsData.language || "").toLowerCase()] || "not defined"}</p>
-            <p class="details-desc">{(detailsData.description || "").replaceAll(/<[^>]*>/g, "")}</p>
+            <p class="details-desc">{(detailsData.description || "").replaceAll(/<!--|--!?>/g, "")}</p>
             {detailsData.link && (
               <a href={detailsData.link} class="button " target="_blank">
                 Website
